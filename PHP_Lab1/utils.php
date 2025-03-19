@@ -8,18 +8,3 @@ echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstra
 
 echo "<div class='container'>";
 
-function generateTitle($title, $color='black', $size=1){
-    echo "<hr>";
-    echo "<h{$size} style='color:{$color}' class='text-center'> {$title} </h{$size}>";
-}
-
-
-function drawlines(){
-
-    echo str_repeat("<br>",10);
-}
-
-function brk(){
-    echo "<br>";
-}
-

@@ -3,31 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registrations</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container d-flex justify-content-center align-items-center vh-100">
+<div class="container d-flex justify-content-center align-items-center">
     <div class="form-container">
         <h3 class="text-center mb-4">Registrations</h3>
         <form action="form.php" method="post">
             <div class="mb-3">
                 <label for="firstname" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="firstname" placeholder="Enter your first name" required>
+                <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter your first name" required>
             </div>
             <div class="mb-3">
                 <label for="lastname" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="lastname" placeholder="Enter your last name" required>
+                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter your last name" required>
             </div>
             <div class="mb-3">
                 <label for="address" class="form-label">Address</label>
-                <textarea class="form-control" id="address" rows="3" placeholder="Your Address" required></textarea>
+                <textarea class="form-control" id="address" name="address" rows="3" placeholder="Your Address" required></textarea>
             </div>
 
             <div class="mb-3">
                 <label for="country" class="form-label">Country</label>
-                <select class="form-select" id="country" required>
+                <select class="form-select" id="country" name="country" required>
                     <option value="" disabled selected>Select your country</option>
                     <option value="US">United States</option>
                     <option value="UK">United Kingdom</option>
@@ -44,56 +45,67 @@
 
             <div class="mb-3">
                 <label class="form-label d-block">Gender</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
-                <label class="form-check-label" for="male">Male</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
-                <label class="form-check-label" for="female">Female</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
             </div>
 
             <div class="mb-3">
                 <label class="form-label d-block">Skills</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="php" value="PHP">
-                    <label class="form-check-label" for="PHP">PHP</label>
+                    <input class="form-check-input" type="checkbox" id="php" name="skills[]" value="PHP">
+                    <label class="form-check-label" for="php">PHP</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="mysql" value="MySQL">
-                    <label class="form-check-label" for="MySQL">MySQL</label>
+                    <input class="form-check-input" type="checkbox" id="mysql" name="skills[]" value="MySQL">
+                    <label class="form-check-label" for="mysql">MySQL</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="postgreesql" value="PostgreeSQL">
-                    <label class="form-check-label" for="PostgreeSQL">PostgreSQL</label>
+                    <input class="form-check-input" type="checkbox" id="postgresql" name="skills[]" value="PostgreSQL">
+                    <label class="form-check-label" for="postgresql">PostgreSQL</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="j2se" value="J2SE">
-                    <label class="form-check-label" for="J2SE">J2SE</label>
+                    <input class="form-check-input" type="checkbox" id="j2se" name="skills[]" value="J2SE">
+                    <label class="form-check-label" for="j2se">J2SE</label>
                 </div>
             </div>
+
             <div class="mb-3">
-                <label for="username" class="form-label">UserName</label>
-                <input type="text" class="form-control" id="username" required>
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
             </div>
             <div class="mb-3">
-                <label for="name" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" required>
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <div class="mb-3">
                 <label for="department" class="form-label">Department</label>
-                <input type="text" class="form-control" id="department" placeholder="OpenSource" required>
+                <input type="text" class="form-control" id="department" name="department" placeholder="OpenSource" required>
             </div>
             <div class="mb-3">
-                <label for="code" class="form-label">code</label>
-                <h5>please enter the code below the box</h5>
-                <input type="text" class="form-control" id="code" required>
+                <label for="code" class="form-label">Code</label>
+                <div class="d-flex justify-content-center">
+                    <p>
+                        <strong>Sh8734</strong> <span id="staticCode"></span>
+                    </p>
+                </div>
+                <input type="text" class="form-control" id="code" name="code" required oninput="validateCode()">
+                <p>Please enter the code below the box</p>
+                <small class="text-danger" id="codeError" style="display: none;">Incorrect code, please try again.</small>
             </div>
-            <button type="submit" class="btn btn-custom w-100">Submit</button>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-custom" id="submitBtn" disabled>Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
         </form>
     </div>
 </div>
-
+<script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,47 +1,53 @@
 <?php
-
-
 require_once "utils.php";
-
-
-generateTitle("--- data received");
-
-
-# $_REQUEST
-generateTitle("Access form data", "blue", 1);
-
-
-generateTitle("get Post Data", "green", 1);
-
-$name = $_POST["name"];
-$email = $_POST["email"];
-$message = $_POST["message"];
-$subject = $_POST["subject"];
-
-
-var_dump($name, $email, $message, $subject);
-
-
+$firstname = $_POST["firstname"];
+$lastname = $_POST["lastname"];
+$address = $_POST["address"];
+$gender = $_POST["gender"];
+$department = $_POST["department"];
+$skills = $_POST["skills"];
+$gender= $_POST["gender"];
+$title = (strtolower($gender) === "male") ? "Mr." : "Miss";
+// var_dump($_POST);
 ?>
 
-<h1> Hii</h1>
-<div id="resultCard" class="mt-4">
-    <div class="card shadow">
-        <div class="card-body">
-            <h4 class="card-title">Submitted Data</h4>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    <link rel="stylesheet" href="php.css">
+</head>
+<body>
+<div class="container mt-5">
+    <div id="resultCard" class="d-flex justify-content-center">
+        <div class="card w-50">
+            <div class="card-body">
+                <h3 class="text-center">Thank You, <?php echo "$title $firstname $lastname"; ?>!</h3>
+                <hr>
+                <h5 class="mb-3">Please Review Your Information</h5>
             <p><strong>Name:</strong> <span id="displayName">
-                    <?php echo $name;?>
+                    <?php echo $firstname.' '.$lastname;?>
                 </span></p>
-            <p><strong>Email:</strong> <span id="displayEmail">
-                     <?php echo $email;?>
+            <p><strong>Address:</strong> <span id="displaySubject">
+                    <?php echo $address;?>
                 </span></p>
-            <p><strong>Subject:</strong> <span id="displaySubject">
-                    <?php echo $subject;?>
-                </span></p>
-            <p><strong>Message:</strong></p>
-            <p id="displayMessage" class="border p-3 bg-light">
-                <?php echo $message;?>
+            <p><strong>Your Skills:</strong></p>
+            <p id="displayMessage">
+            <ul>
+                <?php 
+                    foreach ($skills as $skill) {
+                        echo "<li>$skill</li>";
+                    }?>
+            </ul>
+            </p>
+            <p><strong>Department:</strong></p>
+            <p id="displayMessage">
+                <?php echo $department;?>
             </p>
         </div>
     </div>
 </div>
+</body>
+</html>
