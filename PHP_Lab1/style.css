@@ -1,0 +1,54 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    overflow: auto;
+}
+
+.form-container {
+    max-width: 500px;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    min-width: 60%;
+}
+
+.form-control {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #444;
+}
+
+.form-control::placeholder {
+    color: #bbbbbb;
+}
+
+.form-control:focus {
+    background-color: #333;
+    color: #ffffff;
+    border-color: #007bff;
+    box-shadow: none;
+}
+
+/* Radio buttons and checkboxes */
+.form-check-input {
+    background-color: #2a2a2a;
+    border: 1px solid #bbb;
+}
+
+.form-check-input:checked {
+    background-color: #d400ff;
+    border-color: #d400ff;
+}
+
+/* Submit Button */
+.btn-custom {
+    background-color: #d400ff;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #5400b3;
+}
