@@ -5,9 +5,10 @@ $lastname = $_POST["lastname"];
 $address = $_POST["address"];
 $gender = $_POST["gender"];
 $department = $_POST["department"];
-$skills = $_POST["skills"];
+$skills = $_POST["skills"]?? [];
 $gender= $_POST["gender"];
-$title = (strtolower($gender) === "male") ? "Mr." : "Miss";
+$name = $firstname.' '.$lastname;
+$title = (strtolower($gender) === "male") ? "Mr." : "Miss.";
 // var_dump($_POST);
 ?>
 
@@ -24,11 +25,11 @@ $title = (strtolower($gender) === "male") ? "Mr." : "Miss";
     <div id="resultCard" class="d-flex justify-content-center">
         <div class="card w-50">
             <div class="card-body">
-                <h3 class="text-center">Thank You, <?php echo "$title $firstname $lastname"; ?>!</h3>
+                <h3 class="text-center">Thank You, <?php echo "$title $name"; ?>!</h3>
                 <hr>
                 <h5 class="mb-3">Please Review Your Information</h5>
             <p><strong>Name:</strong> <span id="displayName">
-                    <?php echo $firstname.' '.$lastname;?>
+                    <?php echo $name;?>
                 </span></p>
             <p><strong>Address:</strong> <span id="displaySubject">
                     <?php echo $address;?>
