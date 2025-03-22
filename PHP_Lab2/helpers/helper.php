@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../PHP_Lab2/helpers/table.css">
-</head>
-<body></body>
 <?php
 function validateData($data){
     $errors = [];
@@ -24,6 +16,11 @@ function validateData($data){
     return ["errors" => $errors, "valid_data" => $valid_data];
 }
 function appendDataTofile($filename, $data){
+    if (!file_exists($filename)) {
+        echo "<p>File does not exist.. Creating an empty file</p>";
+        file_put_contents($filename, "");
+        $data = "";
+    } 
     $fileobject= fopen($filename, "a");
     if ($fileobject) {
         fwrite($fileobject, $data);
@@ -46,7 +43,6 @@ function generateID(){
 }
 
 function drawTable($header, $tableData) {
-
     echo '<div class="table-container">
             <table class="custom-table">
             <thead>
@@ -63,8 +59,40 @@ function drawTable($header, $tableData) {
         }
         echo "</tr>";
     }
-
     echo "</tbody></table></div> </div>";
+}
+function deleteFile(){
+    $file = "customer.txt";
+    if (!file_exists($file)) {
+        echo "<script>alert('File already deleted!');</script>";
+        return;
+    }
 
+    if (!unlink($file)) {
+        echo "<script>alert('Failed to delete file.');</script>";
+    } else {
+        echo "<script>alert('File deleted successfully!');</script>";
+        header("Location: ".$_SERVER['PHP_SELF']);
+        exit();
+    }
+}
+
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["deleteFileBtn"])) {
+deleteFile();
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../PHP_Lab2/helpers/table.css">
+    <title>Customer Records</title>
+</head>
+<body>
+    <form method="POST" action="">
+    <button type="submit" class="deletebtn" name="deleteFileBtn">Delete All Records</button>
+</form>
+</body>
+</html>

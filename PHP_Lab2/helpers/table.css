@@ -1,5 +1,5 @@
 body {
-    background-color: #121212; /* Dark theme */
+    background-color: #121212; 
     color: white;
     font-family: "Poppins", Arial, sans-serif;
     margin: 0;
@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Full height */
+    height: 100vh; 
     text-align: center;
     animation: fadeIn 1s ease-in-out;
 }
@@ -69,4 +69,32 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+.deletebtn {
+    background-color: #1e1e1e !important; 
+    color: white !important;
+    border: none !important;
+    padding: 10px 16px !important;
+    font-size: 14px !important; 
+    font-weight: bold !important;
+    cursor: pointer !important;
+    border-radius: 6px !important;
+    transition: background-color 0.3s, transform 0.2s !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 20px auto !important;
+    text-align: center !important;
+    min-width: 150px !important;
+    box-shadow: 0px 4px 10px rgba(255, 77, 77, 0.3);
+}
+
+.deletebtn:hover {
+    background-color: #cc0000 !important;
+    transform: scale(1.03) !important;
+    box-shadow: 0px 6px 12px rgba(255, 77, 77, 0.4) !important;
+}
+
+.deletebtn:active {
+    transform: scale(0.97) !important;
 }
