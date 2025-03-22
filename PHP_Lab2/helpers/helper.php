@@ -42,7 +42,7 @@ function generateID(){
     return $id;
 }
 
-function drawTable($header, $tableData) {
+function drawTable($header, $tableData,$deleteUrl="../PHP_Lab2/helpers/delete.php") {
     echo '<div class="table-container">
             <table class="custom-table">
             <thead>
@@ -57,6 +57,11 @@ function drawTable($header, $tableData) {
         foreach ($row as  $field) {
             echo "<td>{$field}</td>";
         }
+        echo "
+            <td> <form method='post' action='{$deleteUrl}'> 
+            <input type='hidden' name='id' value='{$row[0]}'>
+            <input type='submit' class='btn btn-danger' value='Delete'>
+            </form> </td>";
         echo "</tr>";
     }
     echo "</tbody></table></div> </div>";

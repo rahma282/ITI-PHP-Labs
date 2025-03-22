@@ -20,7 +20,7 @@ body {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    min-width: 60%;
+    min-width: 65%;
     animation: slideIn 1s ease-in-out;
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }

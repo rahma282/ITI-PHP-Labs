@@ -2,7 +2,4 @@
 2:Muhammed:Mostafa:Nasr City:EG:male:MySQL,PostgreSQL:MMostafa:Python
 3:Shrouk:Mostafa:Nasr City:EG:female:MySQL,PostgreSQL,J2SE:ShroukMostafa:Cloud
 4:AbdelAziz:Gohar:Nasr City:EG:male:PHP,MySQL,PostgreSQL,J2SE:AGohaar:Open Source
-5:Fares:Addres:El Mohandsen:EG:male:PHP,MySQL,PostgreSQL,J2SE:FaresRabi3:Open Source
 6:Nouran:Muhammed:El Maady:EG:female:PHP,MySQL,PostgreSQL,J2SE:Nouran:Open Source
-7:Esraa:Mahmoud:6' October:EG:female:PHP,J2SE:Esraa_M:Open Source
-8:Sara:Ahmed:Zagazig:EG:female:J2SE:Sara_A:Cloud

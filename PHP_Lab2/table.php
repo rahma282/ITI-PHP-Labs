@@ -16,7 +16,7 @@
         }
     }
 
-    $headers = ["ID", "First Name", "Last Name", "Address", "Country","Gender","Skills","UserName","Department"];
+    $headers = ["ID", "First Name", "Last Name", "Address", "Country","Gender","Skills","UserName","Department","Delete"];
 
     if (!empty($table)) {
         drawTable($headers, $table);

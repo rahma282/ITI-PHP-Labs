@@ -23,7 +23,7 @@
 </head>
 <body>
 
-<div class="container d-flex justify-content-center align-items-center" style="padding-top:50px;">
+<div class="container d-flex justify-content-center align-items-center" style="padding-top:10px;">
     <div class="form-container">
         <h3 class="text-center mb-4">Registrations</h3>
         <form action="form.php" method="post">
