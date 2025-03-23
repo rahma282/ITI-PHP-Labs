@@ -5,6 +5,7 @@ function validateUploadedFile($file, $extensions) {
 
     if (empty($file['tmp_name'])) {
         $errors["image"] = "Image is required";
+        exit();
     } else {
         $valid_data['tmp_name'] = pathinfo($file['tmp_name'], PATHINFO_FILENAME);
     }
@@ -13,6 +14,7 @@ function validateUploadedFile($file, $extensions) {
 
     if (!in_array($extension, $extensions)) {
         $errors["image"] = "Invalid file extension. Allowed: " . implode(", ", $extensions);
+        exit();
     } else {
         $valid_data['extension'] = $extension;
     }
