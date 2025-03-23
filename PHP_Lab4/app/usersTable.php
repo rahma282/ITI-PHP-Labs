@@ -17,7 +17,6 @@
 </head>
 <body>
 
-<!-- ✅ Full-width Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">MyApp</a>
@@ -37,12 +36,10 @@
     </div>
 </nav>
 
-<!-- ✅ Proper Content Alignment -->
 <div class="container mt-4">
     <?php require_once "../handler/DisplayUsersHandler.php"; ?>
 </div>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
