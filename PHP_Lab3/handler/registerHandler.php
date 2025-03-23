@@ -23,7 +23,7 @@ function handlePostRequest() {
     $fileValidation = validateUploadedFile($_FILES["image"], $allowedExtensions);
     $fileErrors = $fileValidation["errors"];
     $fileValidData = $fileValidation["valid_data"];
-    var_dump($_FILES); 
+   # var_dump($_FILES); 
 
     $errors = array_merge($registerErrors, $fileErrors);
 

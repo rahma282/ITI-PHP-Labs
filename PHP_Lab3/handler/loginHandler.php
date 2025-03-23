@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!file_exists($file)) {
         echo "Users file not found.";
-        header("Location: ../app/login.php");
+        header("Location: ../app/register.php");
         exit();
     }
 
