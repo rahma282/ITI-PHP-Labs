@@ -1,5 +1,1 @@
-1:Rahma:Mostafa:Nasr City:EG:female:PHP,MySQL,PostgreSQL,J2SE:Rahma_M:Open Source
-2:Muhammed:Mostafa:Nasr City:EG:male:MySQL,PostgreSQL:MMostafa:Python
-3:Shrouk:Mostafa:Nasr City:EG:female:MySQL,PostgreSQL,J2SE:ShroukMostafa:Cloud
-4:AbdelAziz:Gohar:Nasr City:EG:male:PHP,MySQL,PostgreSQL,J2SE:AGohaar:Open Source
-6:Nouran:Muhammed:El Maady:EG:female:PHP,MySQL,PostgreSQL,J2SE:Nouran:Open Source
+12:hhhh:hhhh:fkjdkjfd:EG:female:PostgreSQL,J2SE:cxx:Open Source
