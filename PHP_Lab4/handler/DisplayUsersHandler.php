@@ -29,7 +29,7 @@ require_once "../DB/update.php";
                 </form> 
             </td>
             <td>
-                <a href='../app/updateUser.php?id={$row[0]}' class='btn btn-warning'>Edit</a>
+                <a href='../app/updateForm.php?id={$row[0]}' class='btn btn-warning'>Edit</a>
             </td>";
         echo "</tr>";
     }
