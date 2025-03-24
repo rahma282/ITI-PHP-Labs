@@ -1,16 +1,14 @@
 <?php
     require_once "../handler/loginHandler.php";
+    require_once "../helpers/preventLogin.php";
    
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
     $errors = isset($_SESSION["errors"]) ? $_SESSION["errors"] : [];
     unset($_SESSION["errors"]);
-    if (isset($_SESSION["user"])) {
-        header("Location: home.php");
-        exit();
-    }
-    
+
+    preventlogin();
 ?>
 
 <!DOCTYPE html>

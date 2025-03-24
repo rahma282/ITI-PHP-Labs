@@ -1,10 +1,6 @@
 <?php
-    session_start();
-
-    if (!isset($_SESSION["user"])) {
-        header("Location: login.php");
-        exit();
-    }
+   require_once "../helpers/preventLogin.php";
+   preventlogin();
 ?>
 <!DOCTYPE html>
 <html lang="en">

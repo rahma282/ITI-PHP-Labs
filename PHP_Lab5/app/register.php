@@ -1,10 +1,7 @@
 <?php
     require_once "../handler/registerHandler.php";
-    session_start();
-    if (isset($_SESSION["user"])) {
-        header("Location: home.php");
-        exit();
-    }
+    require_once "../helpers/prevntHome.php";
+    preventHome();
 ?>
 <!DOCTYPE html>
 <html lang="en">

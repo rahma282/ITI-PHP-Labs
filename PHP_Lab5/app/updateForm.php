@@ -1,5 +1,7 @@
 <?php
     require_once "../handler/updateHandler.php";
+    require_once "../helpers/preventLogin.php";
+    preventlogin();
 ?>
 <!DOCTYPE html>
 <html lang="en">
