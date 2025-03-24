@@ -40,7 +40,6 @@ require_once "../DB/update.php";
     }
     echo "</tbody></table></div>";
 }
-
     $table  = select('users');
     $headers = ["ID", "Name", "Email", "Room No", "Ext", "Image", "Edit", "Delete"];
 
