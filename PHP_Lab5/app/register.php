@@ -1,5 +1,11 @@
 <?php
     require_once "../handler/registerHandler.php";
+    session_start();
+    if (isset($_SESSION["user"])) {
+        header("Location: home.php");
+        exit();
+    }
+    $userName = $_SESSION["user"];
 ?>
 <!DOCTYPE html>
 <html lang="en">

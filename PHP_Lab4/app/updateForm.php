@@ -1,5 +1,13 @@
 <?php
     require_once "../handler/updateHandler.php";
+    session_start();
+
+    if (!isset($_SESSION["user"])) {
+        header("Location: login.php");
+        exit();
+    }
+    
+    $userName = $_SESSION["user"];
 ?>
 <!DOCTYPE html>
 <html lang="en">

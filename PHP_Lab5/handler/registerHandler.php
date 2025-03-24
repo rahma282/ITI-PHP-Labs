@@ -2,7 +2,7 @@
 require_once "../includes/utils.php";
 require_once "../validation/validation.php";
 require_once "../validation/imageValidation.php";
-require_once "../DB/insertInto.php";
+require_once "../DB/database.php";
 
 $errors = [];
 $oldData = [];
@@ -56,12 +56,12 @@ function saveUserData($data, $fileValidData, $oldValidData) {
         "name" => $oldValidData['name'],
         "email" => $oldValidData['email'],
         "hashedPassword" => $hashedPassword,
-        "roomNo" => $oldValidData['roomNo'] ?? NULL,
+        "roomNo" => $oldValidData['roomNo'],
         "ext" => $oldValidData['ext'],
         "image" => $imageFileName
     ];
-
-    insert("users", $userData);
+    $db= new DataBase();
+    $db->insert("users",$userData);
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "GET") {

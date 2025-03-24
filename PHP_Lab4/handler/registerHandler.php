@@ -56,7 +56,7 @@ function saveUserData($data, $fileValidData, $oldValidData) {
         "name" => $oldValidData['name'],
         "email" => $oldValidData['email'],
         "hashedPassword" => $hashedPassword,
-        "roomNo" => $oldValidData['roomNo'] ?? "Application 1",
+        "roomNO" => $oldValidData['roomNO'],
         "ext" => $oldValidData['ext'],
         "image" => $imageFileName
     ];

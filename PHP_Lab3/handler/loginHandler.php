@@ -19,11 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     foreach ($users as $user) {
         $parts = explode(":", $user);
-        if (count($parts) < 5) {
+        if (count($parts) < 6) {
             continue;
         }
 
-        list($name, $storedEmail, $hashedPassword, $roomNo, $ext) = $parts;
+        list($name, $storedEmail, $hashedPassword, $roomNo, $ext,$image) = $parts;
 
         echo "Stored Email: $storedEmail, Input Email: $email<br>";
 

@@ -63,7 +63,7 @@ function updateUserData($data, $fileValidData, $oldValidData, $id) {
     $userData = [
         "name" => $oldValidData['name'],
         "email" => $oldValidData['email'],
-        "roomNo" => $oldValidData['roomNo'] ?? "Application 1",
+        "roomNO" => $oldValidData['roomNO'],
         "ext" => $oldValidData['ext'],
         "image" => $imageFileName
     ];

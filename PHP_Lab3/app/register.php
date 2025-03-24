@@ -41,15 +41,15 @@
                     </div>
             </div>
             <div class="mb-3">
-                <label for="roomNO" class="form-label">Room NO</label>
-                <select class="form-select" id="roomNO" name="roomNO"> 
+                <label for="roomNo" class="form-label">Room NO</label>
+                <select class="form-select" id="roomNo" name="roomNo"> 
                     <option value="" disabled selected>Select your Room number</option>
-                    <option value="App1" <?php echo (isset($oldData['roomNO']) && $oldData['roomNO'] == "App1") ? "selected" : ""; ?>>Application 1</option>
-                    <option value="App2" <?php echo (isset($oldData['roomNO']) && $oldData['roomNO'] == "App2") ? "selected" : ""; ?>>Application 2</option>
-                    <option value="Cloud" <?php echo (isset($oldData['roomNO']) && $oldData['roomNO'] == "Cloud") ? "selected" : ""; ?>>Cloud</option>
+                    <option value="App1" <?php echo (isset($oldData['roomNo']) && $oldData['roomNo'] == "App1") ? "selected" : ""; ?>>Application 1</option>
+                    <option value="App2" <?php echo (isset($oldData['roomNo']) && $oldData['roomNo'] == "App2") ? "selected" : ""; ?>>Application 2</option>
+                    <option value="Cloud" <?php echo (isset($oldData['roomNo']) && $oldData['roomNo'] == "Cloud") ? "selected" : ""; ?>>Cloud</option>
                 </select>
                 <div class="text-danger  font-weight-bold">
-                        <?php  echo isset($errors["roomNO"]) ? "{$errors['roomNO']}" : ""; ?>
+                        <?php  echo isset($errors["roomNo"]) ? "{$errors['roomNo']}" : ""; ?>
                 </div>
             </div>
             <div class="mb-3">

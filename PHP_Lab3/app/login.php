@@ -34,6 +34,7 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-custom w-100">Login</button>
+                <a href="register.php" class="register-link">Don't have an account? Sign Up</a>
             </form>
         </div>
     </div>

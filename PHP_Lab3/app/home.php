@@ -42,7 +42,7 @@
         <div class="text-center">
             <h1 class="display-4">Welcome, <?php echo htmlspecialchars($userName); ?>!</h1>
             <p class="lead">You have successfully logged in to your dashboard.</p>
-            <a href="#" class="btn btn-primary mt-3">Explore Features</a>
+            <a href="#" class="btn btn-primary mt-3">Display User Data</a>
         </div>
     </div>
 

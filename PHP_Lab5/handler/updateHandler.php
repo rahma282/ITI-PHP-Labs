@@ -2,7 +2,7 @@
 require_once "../includes/utils.php";
 require_once "../validation/validation.php";
 require_once "../validation/imageValidation.php";
-require_once "../DB/update.php";
+require_once "../DB/database.php";
 
 $errors = [];
 $oldData = [];
@@ -63,12 +63,12 @@ function updateUserData($data, $fileValidData, $oldValidData, $id) {
     $userData = [
         "name" => $oldValidData['name'],
         "email" => $oldValidData['email'],
-        "roomNo" => $oldValidData['roomNo'] ?? NULL,
+        "roomNO" => $oldValidData['roomNO'],
         "ext" => $oldValidData['ext'],
         "image" => $imageFileName
     ];
-
-    update("users", $userData,$condition);
+    $db = new DataBase();
+    $db->update("users", $userData,$condition);
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "GET") {

@@ -1,6 +1,5 @@
 <?php
 
-
 const  DB_HOST = "localhost";
 const  DB_USER = "rahma";
 const  DB_PASSWORD = "P@ssw0rd123!";

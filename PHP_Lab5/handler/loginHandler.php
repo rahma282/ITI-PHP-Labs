@@ -1,17 +1,15 @@
 <?php
 session_start();
-require_once "../DB/connectToDB.php";
+require_once "../DB/database.php";
+$db = new DataBase();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
 
     $errors = [];
-    $pdo = connect_to_db();
 
-    $statement = $pdo->prepare("SELECT name, email, hashedPassword, roomNo, ext FROM users WHERE email = ?");
-    $statement->execute([$email]);
-    $user = $statement->fetch(PDO::FETCH_ASSOC);
+    $user = $db->selectByCondition("users",$email);
 
     if ($user) {
         if (password_verify($password, $user["hashedPassword"])) {

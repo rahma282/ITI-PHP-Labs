@@ -1,7 +1,6 @@
 <?php
-require_once "../DB/selete.php";
 require_once "../DB/delete.php";
-require_once "../DB/update.php";
+require_once "../DB/database.php";
   function drawTable($header, $tableData) {
     echo '<div class="table-container">
             <table class="custom-table">
@@ -16,7 +15,12 @@ require_once "../DB/update.php";
         echo "<tr>";
         foreach ($row as  $index=>  $field) {
             if($index==5){
-                echo "<td>{$field}</td>";
+                $imagePath = "../upload/{$field}";
+                //echo "<td>{$imagePath}</td>";
+                if (!file_exists($imagePath) || empty($field)) {
+                    $imagePath = "../upload/default.png";
+                }
+                echo "<td><img src='{$imagePath}' width='100' height='100'></td>";
             }else{
                 echo "<td>{$field}</td>";
             }
@@ -35,8 +39,8 @@ require_once "../DB/update.php";
     }
     echo "</tbody></table></div>";
 }
-
-    $table  = select('users');
+    $db= new DataBase();
+    $table  = $db->select("users");
     $headers = ["ID", "Name", "Email", "Room No", "Ext", "Image", "Edit", "Delete"];
 
     drawTable($headers, $table);

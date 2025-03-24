@@ -6,6 +6,11 @@ if (session_status() === PHP_SESSION_NONE) {
 }
     $errors = isset($_SESSION["errors"]) ? $_SESSION["errors"] : [];
     unset($_SESSION["errors"]);
+    if (isset($_SESSION["user"])) {
+        header("Location: home.php");
+        exit();
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +42,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
                 <button type="submit" class="btn btn-custom w-100">Login</button>
+                <a href="register.php" class="register-link">Don't have an account? Sign Up</a>
             </form>
         </div>
     </div>
