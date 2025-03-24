@@ -16,12 +16,7 @@ require_once "../DB/update.php";
         echo "<tr>";
         foreach ($row as  $index=>  $field) {
             if($index==5){
-                $imagePath = "../upload/{$field}";
-                //echo "<td>{$imagePath}</td>";
-                if (!file_exists($imagePath) || empty($field)) {
-                    $imagePath = "../upload/default.png";
-                }
-                echo "<td><img src='{$imagePath}' width='100' height='100'></td>";
+                echo "<td>{$field}</td>";
             }else{
                 echo "<td>{$field}</td>";
             }
