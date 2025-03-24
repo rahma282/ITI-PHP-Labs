@@ -5,7 +5,6 @@
         header("Location: home.php");
         exit();
     }
-    $userName = $_SESSION["user"];
 ?>
 <!DOCTYPE html>
 <html lang="en">

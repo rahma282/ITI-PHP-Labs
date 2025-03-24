@@ -42,7 +42,8 @@ function handlePostRequest() {
 
 function saveUserData($data, $fileValidData, $oldValidData) {
     $hashedPassword = password_hash($data['password'], PASSWORD_DEFAULT);
-    $imageFileName = $fileValidData["tmp_name"] . "." . $fileValidData["extension"];
+    $timestamp = time();
+    $imageFileName = $timestamp . "_" . $fileValidData["tmp_name"] . "." . $fileValidData["extension"];
 
     $destination = "../upload/" . $imageFileName;
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $destination)) {
@@ -56,7 +57,7 @@ function saveUserData($data, $fileValidData, $oldValidData) {
         "name" => $oldValidData['name'],
         "email" => $oldValidData['email'],
         "hashedPassword" => $hashedPassword,
-        "roomNo" => $oldValidData['roomNo'],
+        "roomNO" => $oldValidData['roomNO'],
         "ext" => $oldValidData['ext'],
         "image" => $imageFileName
     ];

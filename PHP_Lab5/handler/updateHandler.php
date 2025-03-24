@@ -47,7 +47,8 @@ function handlePostRequest() {
 }
 
 function updateUserData($data, $fileValidData, $oldValidData, $id) {
-    $imageFileName = $fileValidData["tmp_name"] . "." . $fileValidData["extension"];
+    $timestamp = time();
+    $imageFileName = $timestamp . "_" . $fileValidData["tmp_name"] . "." . $fileValidData["extension"];
 
     $destination = "../upload/" . $imageFileName;
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $destination)) {
